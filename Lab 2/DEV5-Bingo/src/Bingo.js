@@ -55,7 +55,7 @@ export default class Bingo {
     // create a new card object
     let card = new Card(this.cards[i]);
     // render the card
-    card.render();
+    card.render(i);
     }
   }
 
@@ -81,7 +81,7 @@ export default class Bingo {
     console.log("Saving bingo to localstorage");
     let cards = document.querySelectorAll(".bingo__card--done");
     for (let i = 0; i < cards.length; i++) {
-    cardsWon.push(cards[i].dataset.number);
+      cardsWon.push(cards[i].dataset.number);
     }
     localStorage.setItem("bingo", JSON.stringify(cardsWon));
 
