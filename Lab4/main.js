@@ -32,7 +32,7 @@ const brickTexture = textureLoader.load('/textures/brick.jpg');
 //add wall1
 const wall1Geometry = new THREE.BoxGeometry( 5, 4, 0.5);
 const wall1Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-
+wall1Material.map = brickTexture;
 const wall1 = new THREE.Mesh( wall1Geometry, wall1Material );
 scene.add(wall1);
 wall1.position.z = -5;
@@ -42,7 +42,7 @@ camera.position.z = 5;
 // add wall2
 const wall2Geometry = new THREE.BoxGeometry( 0.5, 4, 5);
 const wall2Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-
+wall2Material.map = brickTexture;
 const wall2 = new THREE.Mesh( wall2Geometry, wall2Material );
 scene.add(wall2);
 wall2.position.z = -2.3;
@@ -52,7 +52,7 @@ wall2.position.x = 2.3;
 // add wall3
 const wall3Geometry = new THREE.BoxGeometry( 0.5, 4, 5);
 const wall3Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-
+wall3Material.map = brickTexture;
 const wall3 = new THREE.Mesh( wall3Geometry, wall3Material );
 scene.add(wall3);
 wall3.position.z = -2.3;
@@ -62,7 +62,7 @@ wall3.position.x = -2.3;
 // add toren1
 const toren1Geometry = new THREE.CylinderGeometry( 2, 2, 7, 32 );
 const toren1Material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-
+toren1Material.map = brickTexture;
 const toren1 = new THREE.Mesh( toren1Geometry, toren1Material );
 scene.add( toren1 );
 toren1.position.y = 4;
@@ -73,7 +73,7 @@ toren1.position.z = -2.5;
 // add toren2
 const toren2Geometry = new THREE.CylinderGeometry( 2, 2, 7, 32 );
 const toren2Material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-
+toren2Material.map = brickTexture;
 const toren2 = new THREE.Mesh( toren2Geometry, toren2Material );
 scene.add( toren2 );
 toren2.position.y = 4;
