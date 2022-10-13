@@ -45,7 +45,7 @@ wall2.position.z = -2.3;
 wall2.position.y = 2.5;
 wall2.position.x = 2.3;
 
-// add wall2
+// add wall3
 const wall3Geometry = new THREE.BoxGeometry( 0.5, 4, 5);
 const wall3Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 
@@ -76,7 +76,33 @@ toren2.position.y = 4;
 toren2.position.x = 4.5;
 toren2.position.z = -2.5;
 
+//add roof1
+const roof1Geometry = new THREE.ConeGeometry( 4, 4, 4 );
+const roof1Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+const roof1 = new THREE.Mesh( roof1Geometry, roof1Material );
+scene.add( roof1 );
+roof1.position.y = 6.5;
+roof1.position.z = -2.5;
+roof1.rotateY(Math.PI/4);
 
+//add roof2
+const roof2Geometry = new THREE.ConeGeometry( 3, 3, 8 );
+const roof2Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+const roof2 = new THREE.Mesh( roof2Geometry, roof2Material );
+scene.add( roof2 );
+roof2.position.y = 9;
+roof2.position.z = -2.5;
+roof2.position.x = -4.5;
+
+
+//add roof2
+const roof3Geometry = new THREE.ConeGeometry( 3, 3, 8 );
+const roof3Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+const roof3 = new THREE.Mesh( roof3Geometry, roof3Material );
+scene.add( roof3 );
+roof3.position.y = 9;
+roof3.position.z = -2.5;
+roof3.position.x = 4.5;
 
 
 function animate() {
