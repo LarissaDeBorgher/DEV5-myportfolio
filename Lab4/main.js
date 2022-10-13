@@ -1,7 +1,7 @@
 import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 
 const scene = new THREE.Scene();
@@ -118,9 +118,30 @@ sphereMaterial.side = THREE.BackSide;
 const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
 
+// extra licht???????
+// add Flower 
+let flower;
+const gltfLoader = new GLTFLoader();
+gltfLoader.load('/public/flower/scene.gltf', (gltf) => {
+flower = gltf.scene;
+gltf.scene.position.set(4,0,2);
+scene.add(gltf.scene);
+});
+
+// add Flower 
+let flower2;
+gltfLoader.load('/public/flower/scene.gltf', (gltf) => {
+flower2 = gltf.scene;
+gltf.scene.position.set(-4,0,2);
+scene.add(gltf.scene);
+});
+
+
 function animate() {
   requestAnimationFrame( animate );
 
+  flower.rotation.y += 0.01;
+  flower2.rotation.y -= 0.01;
   
 
   renderer.render( scene, camera );
