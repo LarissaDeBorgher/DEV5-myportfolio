@@ -25,6 +25,10 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight.position.set(1, 2, 1);
 scene.add(directionalLight);
 
+//load texture
+const textureLoader = new THREE.TextureLoader();
+const brickTexture = textureLoader.load('/textures/brick.jpg');
+
 //add wall1
 const wall1Geometry = new THREE.BoxGeometry( 5, 4, 0.5);
 const wall1Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
@@ -104,6 +108,15 @@ roof3.position.y = 9;
 roof3.position.z = -2.5;
 roof3.position.x = 4.5;
 
+// add sphere
+//load texture
+const skyTexture = textureLoader.load('/textures/sky.jpg');
+const sphereGeometry = new THREE.SphereGeometry(100, 32, 32);
+const sphereMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+sphereMaterial.map = skyTexture;
+sphereMaterial.side = THREE.BackSide;
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+scene.add(sphere);
 
 function animate() {
   requestAnimationFrame( animate );
