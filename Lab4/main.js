@@ -154,7 +154,16 @@ grassMaterial.map = grassTexture;
 const grass = new THREE.Mesh( grassGeometry, grassMaterial );
 scene.add( grass );
 
-
+// Load texture
+const nameTexture = textureLoader.load('/name/name.png');
+// add name card
+const nameGeometry = new THREE.PlaneGeometry( 4, 3, 32 );
+const nameMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+nameMaterial.map = nameTexture;
+const name = new THREE.Mesh( nameGeometry, nameMaterial );
+scene.add( name );
+name.position.y = 2;
+name.position.z = -4;
 
 
 function animate() {
