@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Loader } from 'three';
 
 
 const scene = new THREE.Scene();
@@ -164,6 +165,38 @@ const name = new THREE.Mesh( nameGeometry, nameMaterial );
 scene.add( name );
 name.position.y = 2;
 name.position.z = -4;
+
+
+
+
+//create clouds
+for (let index = 0; index < 10; index++) {
+  let x = (Math.random() * 50) - 30;
+  let y = 10;
+  let z = (Math.random() * 50) - 10;
+  const loader = new GLTFLoader();
+  gltfLoader.load('/cloud/scene.gltf', (gltf) => {
+  const cloud = gltf.scene;
+  gltf.scene.position.set(x,y,z);
+  scene.add(gltf.scene);
+  cloud.scale.set(0.25, 0.25, 0.25);
+  cloud.position.x = x;
+  cloud.position.y = y;
+  cloud.position.z = z;
+  this.Group.add( cloud );
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 function animate() {
