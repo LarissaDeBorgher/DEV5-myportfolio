@@ -80,9 +80,13 @@ toren2.position.y = 4;
 toren2.position.x = 4.5;
 toren2.position.z = -2.5;
 
+// Load texture
+const brick2Texture = textureLoader.load('/textures/pinkbrick.jpg');
+
 //add roof1
 const roof1Geometry = new THREE.ConeGeometry( 4, 4, 4 );
 const roof1Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+roof1Material.map = brick2Texture;
 const roof1 = new THREE.Mesh( roof1Geometry, roof1Material );
 scene.add( roof1 );
 roof1.position.y = 6.5;
@@ -92,6 +96,7 @@ roof1.rotateY(Math.PI/4);
 //add roof2
 const roof2Geometry = new THREE.ConeGeometry( 3, 3, 8 );
 const roof2Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+roof2Material.map = brick2Texture;
 const roof2 = new THREE.Mesh( roof2Geometry, roof2Material );
 scene.add( roof2 );
 roof2.position.y = 9;
@@ -102,6 +107,7 @@ roof2.position.x = -4.5;
 //add roof2
 const roof3Geometry = new THREE.ConeGeometry( 3, 3, 8 );
 const roof3Material = new THREE.MeshBasicMaterial( {color: 0xff0099} );
+roof3Material.map = brick2Texture;
 const roof3 = new THREE.Mesh( roof3Geometry, roof3Material );
 scene.add( roof3 );
 roof3.position.y = 9;
@@ -118,11 +124,11 @@ sphereMaterial.side = THREE.BackSide;
 const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
 
-// extra licht???????
+
 // add Flower 
 let flower;
 const gltfLoader = new GLTFLoader();
-gltfLoader.load('/public/flower/scene.gltf', (gltf) => {
+gltfLoader.load('/flower/scene.gltf', (gltf) => {
 flower = gltf.scene;
 gltf.scene.position.set(4,0,2);
 scene.add(gltf.scene);
@@ -130,11 +136,14 @@ scene.add(gltf.scene);
 
 // add Flower 
 let flower2;
-gltfLoader.load('/public/flower/scene.gltf', (gltf) => {
+gltfLoader.load('/flower/scene.gltf', (gltf) => {
 flower2 = gltf.scene;
 gltf.scene.position.set(-4,0,2);
 scene.add(gltf.scene);
 });
+
+
+
 
 
 function animate() {
