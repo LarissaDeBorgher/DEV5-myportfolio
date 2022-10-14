@@ -132,6 +132,7 @@ gltfLoader.load('/flower/scene.gltf', (gltf) => {
 flower = gltf.scene;
 gltf.scene.position.set(4,0,2);
 scene.add(gltf.scene);
+flower.position.y = 0.5;
 });
 
 // add Flower 
@@ -140,8 +141,15 @@ gltfLoader.load('/flower/scene.gltf', (gltf) => {
 flower2 = gltf.scene;
 gltf.scene.position.set(-4,0,2);
 scene.add(gltf.scene);
+flower2.position.y = 0.5;
 });
 
+//grass
+const GrassGeometry = new THREE.BoxGeometry( 20, 1, 20); 
+const GrassMaterial = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
+const grass = new THREE.Mesh( GrassGeometry, GrassMaterial );
+
+scene.add( grass );
 
 
 
