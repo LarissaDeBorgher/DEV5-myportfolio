@@ -66,9 +66,13 @@ export default class App {
         }
         else if (temp >= 25 && temp < 30) {
             this.movieid = "https://ghibliapi.herokuapp.com/films/2de9426b-914a-4a06-a3a0-5e6d9d3886f6"; 
-            document.querySelector("p").innerHTML = "This the perfect movie for on a hot summer night";
+            document.querySelector("p").innerHTML = "This is the perfect movie for on a hot summer night";
             //Arrietty
-        
+        }
+        else if (temp >= 30) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/758bf02e-3122-46e0-884e-67cf83df1786";
+            document.querySelector("p").innerHTML = "it's too hot outside, so why not watch a movie?";
+            //Ponyo
         }
     }
 
