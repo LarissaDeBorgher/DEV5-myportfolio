@@ -122,9 +122,17 @@ export default class App {
                 //save movietype to local storage
                 localStorage.setItem('movietype', JSON.stringify(data));
                 this.showMovieType(data);
+
+               
                
             })
         }
-           
+        showMovieType(data) {
+            const type = data.image;
+            //console.log(test);
+            document.querySelector("#type").src = type;
+            
+
         }
-    
+       
+    }
