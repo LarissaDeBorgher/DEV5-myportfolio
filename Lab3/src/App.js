@@ -54,6 +54,16 @@ export default class App {
             document.querySelector("p").innerHTML = "Perfect movie to relax.";
             //Āya to Majo
         }
+        else if (temp >= 15 && temp < 20) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/d868e6ec-c44a-405b-8fa6-f7f0f8cfb500"; 
+            document.querySelector("p").innerHTML = "Get some drinks and enjoy the movie";
+            //"The Red Turtle
+        }
+        else if (temp >= 20 && temp < 25) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/578ae244-7750-4d9f-867b-f3cd3d6fecf4"; 
+            document.querySelector("p").innerHTML = "This the perfect movie for on a hot summer night";
+            //The Tale of the Princess Kaguya
+        }
     }
 
     getMovies() {
