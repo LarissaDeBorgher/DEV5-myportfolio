@@ -45,9 +45,14 @@ export default class App {
             //	Spirited Away
         }
         else if (temp >= 5 && temp < 10) {
-            this.bookISBN = "https://ghibliapi.herokuapp.com/films/cd3d059c-09f4-4ff3-8d63-bc765a5184fa"; 
+            this.movieid = "https://ghibliapi.herokuapp.com/films/cd3d059c-09f4-4ff3-8d63-bc765a5184fa"; 
             document.querySelector("p").innerHTML = "Get warm with this adventure movie";
             // Howl's Moving Castle
+        }
+        else if (temp >= 10 && temp < 15) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/790e0028-a31c-4626-a694-86b7a8cada40"; 
+            document.querySelector("p").innerHTML = "Perfect movie to relax";
+            //Āya to Majo
         }
     }
 
