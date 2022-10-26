@@ -51,7 +51,7 @@ export default class App {
         }
         else if (temp >= 10 && temp < 15) {
             this.movieid = "https://ghibliapi.herokuapp.com/films/790e0028-a31c-4626-a694-86b7a8cada40"; 
-            document.querySelector("p").innerHTML = "Perfect movie to relax";
+            document.querySelector("p").innerHTML = "Perfect movie to relax.";
             //Āya to Majo
         }
     }
