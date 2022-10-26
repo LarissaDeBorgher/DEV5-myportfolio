@@ -1,3 +1,3 @@
-import './style.css';
-import Weather from './src/Weather.js';
-const weather = new Weather('99f6c06ad6414d7fb2070311220510');
+
+import App from './src/App.js';
+const app = new App('f90648513d66a5acba5c22064d81d773');
