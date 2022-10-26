@@ -38,7 +38,10 @@ export default class App {
             this.movieid = "https://ghibliapi.herokuapp.com/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3"; 
             document.querySelector("p").innerHTML = "the perfect weather to get cozy and watch a romance anime";
         }
-      
+        else if (temp >= 0 && temp < 5) {
+            this.movieid = "9781444753424"; //Daughter of Smoke and Bone
+            document.querySelector("p").innerHTML = "Once you see this movie, You will not be able to get enough of it";
+        }
     }
 
     getMovies() {
