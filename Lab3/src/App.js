@@ -54,6 +54,11 @@ export default class App {
             document.querySelector("p").innerHTML = "Perfect movie to relax.";
             //Āya to Majo
         }
+        else if (temp >= 15 && temp < 20) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/d868e6ec-c44a-405b-8fa6-f7f0f8cfb500"; 
+            document.querySelector("p").innerHTML = "Get some drinks and enjoy the movie";
+            //"The Red Turtle
+        }
     }
 
     getMovies() {
