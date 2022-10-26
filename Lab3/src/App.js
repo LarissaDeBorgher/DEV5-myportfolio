@@ -65,7 +65,7 @@ export default class App {
     displayWeather(data) {
         const temp = data.main.temp;
         //console.log(temp);
-        document.querySelector("h1").innerHTML = "Het is " + temp + " °C buiten";
+        document.querySelector("h1").innerHTML = "It is " + temp + " °C outside";
 
         if(temp < 0) {
             this.movieid = "ff24da26-a969-4f0e-ba1e-a122ead6c6e3"; 
