@@ -29,12 +29,22 @@ export default class App {
             })
     }
 
-    
+    displayWeather(data) {
+        const temp = data.current.temp_c;
+        //console.log(temp);
+        document.querySelector("h1").innerHTML = "Het is " + temp + " °C buiten";
+
+        if(temp < 0) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3"; 
+            document.querySelector("p").innerHTML = "the perfect weather to get cozy and watch a romance anime";
+        }
+      
+    }
 
     getMovies() {
        
         //console.log(lat, lon);
-        const url = `https://ghibliapi.herokuapp.com/films`;
+        const url = `https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe`; // is deze wel juist ? (link van een bepaalde film)
 
         fetch(url)
             .then(response => response.json())
