@@ -39,15 +39,16 @@ export default class App {
             document.querySelector("p").innerHTML = "the perfect weather to get cozy and watch a romance anime";
         }
         else if (temp >= 0 && temp < 5) {
-            this.movieid = "9781444753424"; //Daughter of Smoke and Bone
+            this.movieid = "https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c"; 
             document.querySelector("p").innerHTML = "Once you see this movie, You will not be able to get enough of it";
         }
+      
     }
 
     getMovies() {
        
         //console.log(lat, lon);
-        const url = `https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe`; // is deze wel juist ? (link van een bepaalde film)
+        const url = `https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe`; 
 
         fetch(url)
             .then(response => response.json())
