@@ -61,8 +61,14 @@ export default class App {
         }
         else if (temp >= 20 && temp < 25) {
             this.movieid = "https://ghibliapi.herokuapp.com/films/578ae244-7750-4d9f-867b-f3cd3d6fecf4"; 
-            document.querySelector("p").innerHTML = "This the perfect movie for on a hot summer night";
+            document.querySelector("p").innerHTML = "What about watching this movie with your friends?";
             //The Tale of the Princess Kaguya
+        }
+        else if (temp >= 25 && temp < 30) {
+            this.movieid = "https://ghibliapi.herokuapp.com/films/2de9426b-914a-4a06-a3a0-5e6d9d3886f6"; 
+            document.querySelector("p").innerHTML = "This the perfect movie for on a hot summer night";
+            //Arrietty
+        
         }
     }
 
