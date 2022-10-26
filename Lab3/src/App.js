@@ -2,6 +2,7 @@ export default class App {
     constructor(api_key) {
         this.apiKey = api_key;
         this.getLocation();
+        this.getMovies();
     }
 
     getLocation() {
@@ -26,6 +27,19 @@ export default class App {
                 console.log(data);
                
             })
-    }}
+    }
 
     
+
+    getMovies() {
+       
+        //console.log(lat, lon);
+        const url = `https://ghibliapi.herokuapp.com/films`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+               
+            })
+    }}
