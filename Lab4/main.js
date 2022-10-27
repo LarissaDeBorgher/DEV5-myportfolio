@@ -160,9 +160,10 @@ const nameTexture = textureLoader.load('/name/name.png');
 // add name card
 const nameGeometry = new THREE.BoxGeometry( 4, 3, 3 );
 const nameMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-nameMaterial.map = nameTexture;
+
 nameMaterial.material = THREE.DoubleSide;
 const name = new THREE.Mesh( nameGeometry, nameMaterial );
+nameMaterial.map = nameTexture;
 scene.add( name );
 name.position.y = 2;
 name.position.z = -4;
