@@ -156,11 +156,12 @@ const grass = new THREE.Mesh( grassGeometry, grassMaterial );
 scene.add( grass );
 
 // Load texture
-const nameTexture = textureLoader.load('/name/name.png');
+const nameTexture = textureLoader.load('/public/name/name.png');
 // add name card
 const nameGeometry = new THREE.PlaneGeometry( 4, 3, 32 );
 const nameMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
 nameMaterial.map = nameTexture;
+nameMaterial.material = THREE.DoubleSide;
 const name = new THREE.Mesh( nameGeometry, nameMaterial );
 scene.add( name );
 name.position.y = 2;
@@ -186,17 +187,6 @@ for (let index = 0; index < 10; index++) {
   this.Group.add( cloud );
   });
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 function animate() {
