@@ -156,7 +156,7 @@ const grass = new THREE.Mesh( grassGeometry, grassMaterial );
 scene.add( grass );
 
 // Load texture
-const nameTexture = textureLoader.load('/textures/name.png');
+const nameTexture = textureLoader.load('/textures/name.jpg');
 // add name card
 const nameGeometry = new THREE.BoxGeometry( 4, 3, 3 );
 const nameMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
