@@ -64,7 +64,7 @@ export default class App {
 
     displayWeather(data) {
         const temp = data.main.temp;
-        //console.log(temp);
+        //console.log(data);
         document.querySelector("h1").innerHTML = "It is " + temp + " °C outside";
 
         if(temp < 0) {
@@ -122,6 +122,11 @@ export default class App {
                 //save movietype to local storage
                 localStorage.setItem('movietype', JSON.stringify(data));
                 this.showMovieType(data);
+                
+                
+                localStorage.setItem('moviedescription', JSON.stringify(data));
+                this.showMovieDescription(data); // laten controleren
+
 
                
                
@@ -133,6 +138,11 @@ export default class App {
             document.querySelector("#type").src = type;
             
 
+        }
+        showMovieDescription(data) {
+            const description = data.description         
+            console.log(description);   
+            document.querySelector("#description").innerHTML = description; // laten controleren
         }
        
     }
