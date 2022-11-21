@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div>
+    <div class="comments">
         <ul>
             <li v-for="user in users" :key="comment">
                 <h3> {{ user.user }}</h3>
@@ -30,6 +30,12 @@ onMounted(() => {
         </ul>
     </div>
   
- 
- 
+ <div class="addcomment">
+    <input type="text" v-model="comment" placeholder="Add comment..."/>
+    <button @click="addComment">Post</button>
+ </div>
+   
   </template>
+
+
+
