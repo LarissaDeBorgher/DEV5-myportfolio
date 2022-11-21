@@ -1,19 +1,35 @@
 <script setup>
-    import { ref, onMounted, reactive } from 'vue'
+    import { ref, onMounted} from 'vue'
 
 
-    let user = ref("");
-    let text = reactive("");
+    let users = ref("");
+    let texts = ref("");
 
-//onMounted
+//onMountedgit
 onMounted(() => {
        const apiUrl = "https://lab5-p379.onrender.com/api/v1/messages/"; 
          fetch(apiUrl)
            .then((res) => res.json())
            .then((data) => {
-             user.value = data.videos[0].user;
-             text.value = data.videos[0].text;
+            //console.log(data);
+             users.value = data;
+             texts.value = data;
            });
     });
  
 </script>
+
+<template>
+    <div>
+        <ul>
+            <li v-for="user in users" :key="comment">
+                <h3> {{ user.user }}</h3>
+                <p> {{ user.text }}</p>
+             
+            </li>
+        </ul>
+    </div>
+  
+ 
+ 
+  </template>
