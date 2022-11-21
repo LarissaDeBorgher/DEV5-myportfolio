@@ -22,7 +22,7 @@ onMounted(() => {
 <template>
     <div class="comments">
         <ul>
-            <li v-for="user in users" :key="comment">
+            <li v-for="user in users" :key="text">
                 <h3> {{ user.user }}</h3>
                 <p> {{ user.text }}</p>
              
@@ -38,4 +38,34 @@ onMounted(() => {
   </template>
 
 
+<style scoped>
+.comments{
+    background-color: #dddddd;
+    width: 50%;
+    height: 100%;
+}
+ul{
+
+    padding: 0;
+    margin: 0;
+}
+li{
+   list-style: none;
+   padding: 0;
+   margin: 2%;
+}
+h3{
+   margin: 0;
+   padding: 0;
+   font-size: 1.2rem;
+}
+
+p{
+   margin: 0;
+   padding: 0;
+   font-size: 1rem;
+}
+
+
+</style>
 
