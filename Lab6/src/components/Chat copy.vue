@@ -2,8 +2,8 @@
     import { ref, onMounted, reactive} from 'vue'
 
 
-    let comments = reactive({comments: []});
-    let textMessage = ref("");
+    let users = reactive({comments: []});
+    let texts = ref("");
 
 //onMountedgit
 onMounted(() => {
@@ -11,37 +11,33 @@ onMounted(() => {
          fetch(apiUrl)
            .then((res) => res.json())
            .then((data) => {
-            
-             comments.comments = data;
-             //console.log(data);
+            //console.log(data);
+             users.value = data;
+             texts.value = data;
            });
     });
 
     const addComment = () => {
-        console.log('textmessage.value', textMessage.value);
-        let data = {
+        const apiUrl = "https://lab5-p379.onrender.com/api/v1/messages/"; 
+        const data = {
             user: "Larissa",
-            text: textMessage.value,
+            text: texts.value,
         };
-        fetch("https://lab5-p379.onrender.com/api/v1/messages/", {
+        fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         })
-        .then(res => res.json())
-        .then(data => {
-            //console.log('it works',data);
-            comments.comments.push({
-                _id: data.data.id,
-                user: data.data.user,
-                text: data.data.text
+        .then((res) => res.json())
+        .then((data) => {
+            console.log('it works',data);
+            texts.value.push({
+                user: data.user,
+                text: data.text,
             });
             })
-            .catch((err) => {
-                //console.log(err);
-            });
             };
        
       
@@ -50,16 +46,16 @@ onMounted(() => {
 <template>
     <div class="comments">
         <ul>
-            <li v-for="comment in comments.comments" :key="comments.id">
-                <h3> {{ comment.user }}</h3>
-                <p> {{ comment.text }}</p>
+            <li v-for="user in users" :key="text">
+                <h3> {{ user.user }}</h3>
+                <p> {{ user.text }}</p>
              
             </li>
         </ul>
     </div>
   
  <div class="addcomment">
-    <input type="text" v-model="textMessage" placeholder="Add comment..."/>
+    <input type="text" v-model="comment" placeholder="Add comment..."/>
     <button @click="addComment">Post</button>
  </div>
    

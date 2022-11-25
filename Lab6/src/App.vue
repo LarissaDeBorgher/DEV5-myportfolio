@@ -8,6 +8,7 @@ import VideoDetails from './components/VideoDetails.vue';
 //import VideoDetails.vue
 import Chat from './components/Chat.vue';
 
+
 </script>
 
 <template>
