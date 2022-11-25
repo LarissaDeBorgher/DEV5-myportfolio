@@ -2,21 +2,21 @@
     import { ref, onMounted, reactive} from 'vue'
 
 
-    let comments = reactive({comments: []});
+    let comments = reactive({comments: []}); //updat array comments after submitting (nopage reload)
     let textMessage = ref("");
 
-//onMountedgit
+//Get all comments when loading component onMounted
 onMounted(() => {
        const apiUrl = "https://lab5-p379.onrender.com/api/v1/messages/"; 
          fetch(apiUrl)
            .then((res) => res.json())
            .then((data) => {
-            
+            //console.log(data);
              comments.comments = data;
-             //console.log(data);
+             
            });
     });
-
+//add own comment in array (API)
     const addComment = () => {
         console.log('textmessage.value', textMessage.value);
         let data = {
@@ -48,6 +48,10 @@ onMounted(() => {
 </script>
 
 <template>
+      <!-- (key) elk item in de loop moet een unieke waarde hebben
+         (v-for) loop over de comments array 
+         (v, @) shortcut
+         (@click) event listener-->
     <div class="comments">
         <ul>
             <li v-for="comment in comments.comments" :key="comments.id">
@@ -69,8 +73,9 @@ onMounted(() => {
 <style scoped>
 .comments{
     background-color: #dddddd;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height:380px;
+    overflow: scroll;
 }
 ul{
 

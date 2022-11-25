@@ -14,14 +14,21 @@ import Chat from './components/Chat.vue';
 <template>
   <div class="app">
     <VideoPlayer />
-    <VideoDetails />
-    <Chat />  
+    <div class="userfield">
+      <VideoDetails />
+      <Chat />
+    </div> 
   </div>
 </template>
 
 <style scoped>
 .app{
-  display:grid;
-  grid-template-columns: 8fr 4fr;
+  display:flex;
+  flex-direction: row;
+}
+
+.userfield{
+  display:flex;
+  flex-direction: column;
 }
 </style>
